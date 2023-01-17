@@ -2,10 +2,12 @@ import { useState } from "react";
 import { Input } from "./components/Input";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import toast from "react-hot-toast";
 
 import { Aside, Container, Content, Form } from "./app";
 import { api } from "./services/api";
 import { schema } from "./validations/schema";
+import { AxiosError, isAxiosError } from "axios";
 
 export interface FormData {
   amount: number;
@@ -42,7 +44,11 @@ function App() {
 
       setReceive(response.data);
     } catch (err) {
-      console.log(err);
+      if (isAxiosError(err)) {
+        if (err.response) {
+          toast.error(err.response.data.message);
+        }
+      }
     }
   };
 

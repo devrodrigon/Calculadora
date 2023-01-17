@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+interface ContainerProps {
+  error: boolean;
+}
+
+export const Container = styled.div<ContainerProps>`
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -10,7 +14,7 @@ export const Container = styled.div`
   }
 
   span {
-    color: ${({ theme }) => theme.gray[100]};
+    color: ${({ theme, error }) => (error ? "red" : theme.gray[100])};
     font-size: 12px;
   }
 `;

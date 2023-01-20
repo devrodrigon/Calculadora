@@ -10,7 +10,7 @@ export const light = {
   },
 
   gray: {
-    100: "#E4E4E4",
+    100: "#d1d5db",
     200: "#AEAEAE",
     300: "#727272",
   },

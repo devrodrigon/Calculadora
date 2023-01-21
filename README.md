@@ -20,6 +20,8 @@ $ yarn
 $ yarn dev
 
 # O servidor inciará na porta:5173 - acesse <http://localhost:5173>
+
+# Informe os dados e tecle ENTER para calcular.
 ```
 
 ### Rodando os testes
